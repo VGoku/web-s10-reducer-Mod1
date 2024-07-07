@@ -36,11 +36,25 @@ const initialState = {
     },
   ]
 };
-// 👇 create your initial state object here
+// 👇 create your initial state object here 6:21 on vidoe
 
 const reducer = (state, action) => {
   // 👇 implement your reducer here using the action types above
-  return state;
+  switch (action.type) {
+    case CREATE_QUOTE:
+      return { ...state }
+    case DELETE_QUOTE:
+      return { ...state }
+    case EDIT_QUOTE_AUTHENTICITY:
+      return { ...state }
+    case SET_HIGHLIGHTED_QUOTE:
+      return { ...state }
+    case TOGGLE_VISIBILITY:
+      return { ...state }
+    default:
+    return state;
+  }
+  
 }
 
 export default function App() {
@@ -70,7 +84,7 @@ export default function App() {
       <Quotes
         quotes={state.quotes}
       // 👇 lots of props are missing! Check the Quotes component
-
+      highlightedQuote={state.highlightedQuote}
       />
       <QuoteForm
         createQuote={createQuote}
